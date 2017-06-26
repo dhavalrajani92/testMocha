@@ -66,4 +66,4 @@ export const testSuite = (title, testfn) => {
 };
 export const setup = spush.bind(null, 'setup');
 export const teardown = spush.bind(null, 'teardown');
-export const testDone = (err,self,fn) => done(err,self,fn)
+export const testDone = (err,self,fn) => done(err,self,fn);

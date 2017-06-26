@@ -2,6 +2,10 @@ import assert from 'assert';
 import { test, testSuite, setup, teardown,testDone } from './describe';
 
 const obj = {};
+function callDone(err){
+    testDone(err,global, () => {
+  });
+}
 testSuite('True Or False? ', () => {
   testSuite('setup', () => {
     test('should setup num', () => {
@@ -41,7 +45,7 @@ testSuite('True Or False? ', () => {
       });
     });
 
-    test('should test ![] === true ', (callDone) => {
+    test('should test ![] === true ', () => {
 
 
         var timeOutVar = setTimeout(() => {
@@ -54,10 +58,7 @@ testSuite('True Or False? ', () => {
         });
 
 
-        function callDone(err){
-          testDone(err,global, () => {
-          });
-        }
+
     });
 
     test('!NaN === true', () => {
